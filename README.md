@@ -8,12 +8,14 @@ file for further investigation.
 
 ## Installation
 Clone the repository, then run the following command in the repository
-top-level directory: `pip install -r requirements.txt`.
+top-level directory: 
+```
+pip install -r requirements.txt
+```
 
 ## Using the tool
 This tool supports examining compatibility with either the 3.6
 or 4.0 versions of Amazon DocumentDB. The format of the command is:
-
 ```
 python3 docdb/compat.py <version> <input log file> <output file>
 ```
