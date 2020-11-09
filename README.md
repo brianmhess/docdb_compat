@@ -10,7 +10,7 @@ file for further investigation.
 Clone the repository, then run the following command in the repository
 top-level directory: 
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ## Using the tool
