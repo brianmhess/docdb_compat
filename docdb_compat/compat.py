@@ -103,10 +103,15 @@ def process_log_file(fname, unsupported_fname, ver):
     #    print(f'\t{k}\t{usage_map[k]}')
     print(f'Log lines of unsupported operators logged here: {unsupported_fname}')
 
+def print_usage():
+    print("Usage: compat.py <version> <input_file> <output_file>")
+    print("  version : 3.6 or 4.0")
+    print("  input_file: location of MongoDB log file")
+    print("  output_file: location to write log lines that correspond to unsupported operators")
+
 def main(args):
-    usage = "compat.py <version> <input file> <output file>"
     if (3 != len(args)):
-        print(f'Error:\n{usage}')
+        print_usage()
         sys.exit()
     ver = args[0]
     infname = args[1]
