@@ -17,7 +17,7 @@ pip3 install -r requirements.txt
 This tool supports examining compatibility with either the 3.6
 or 4.0 versions of Amazon DocumentDB. The format of the command is:
 ```
-python3 docdb/compat.py <version> <input log file> <output file>
+python3 docdb_compat/compat.py <version> <input log file> <output file>
 ```
 
 * The `<version>` is the version of Amazon DocumentDB with which you
@@ -28,7 +28,7 @@ which are not supported by Amazon DocumentDB will saved
 
 ### Examples
 ```
-python3 docdb/compat.py 3.6 test/testlog.txt /tmp/test.output
+python3 docdb_compat/compat.py 3.6 test/testlog.txt /tmp/test.output
 ```
 Expected output:
 ```
