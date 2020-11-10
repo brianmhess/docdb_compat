@@ -33,14 +33,14 @@ python3 docdb_compat/compat.py 3.6 test/testlog.txt /tmp/test.output
 Expected output:
 ```
 Results:
-        2 out of 7 queries unsupported
-Query Types:
-        aggregate   3
-        find        3
-        query       1
+         2 out of 7 queries unsupported
 Unsuported operators (and number of queries used)
         $facet                2
         $bucket               1
         $bucketAuto           1
+Query Types:
+        aggregate   3
+        find        3
+        query       1
 Log lines of unsupported operators logged here: /tmp/compat.out
 ```

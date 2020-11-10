@@ -114,18 +114,19 @@ def process_log_file(fname, unsupported_fname, ver):
                 unsupported_file.write("\n")
                 unsupported_ct += 1
     unsupported_file.close()
+
+    print('Results:')
     if (unsupported_ct > 0):
-        print(f'Results:\n\t {unsupported_ct} out of {line_ct} queries unsupported')
+        print(f'\t {unsupported_ct} out of {line_ct} queries unsupported')
+        print(f'Unsuported operators (and number of queries used)')
+        for k,v in sorted(usage_map.items(), key=lambda x: (-x[1],x[0])):
+            print(f'\t{k:20}  {v}')
     else:
-        print(f'All queries are supported')
-    print(f'Query Types:')
+        print('\t All queries are supported')
+
+    print('Query Types:')
     for k,v in sorted(cmd_map.items(), key=lambda x: (-x[1],x[0])):
         print(f'\t{k:10}  {v}')
-    if (unsupported_ct > 0):
-        print(f'Unsuported operators (and number of queries used)')
-    #sorted_usage_map = {k: v for k, v in sorted(x.items(), key=lambda item: item[1])}
-    for k,v in sorted(usage_map.items(), key=lambda x: (-x[1],x[0])):
-        print(f'\t{k:20}  {v}')
     print(f'Log lines of unsupported operators logged here: {unsupported_fname}')
 
 def print_usage():
