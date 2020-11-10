@@ -30,3 +30,17 @@ which are not supported by Amazon DocumentDB will saved
 ```
 python3 docdb/compat.py 3.6 test/testlog.txt /tmp/test.output
 ```
+Expected output:
+```
+Results:
+        2 out of 7 queries unsupported
+Query Types:
+        aggregate   3
+        find        3
+        query       1
+Unsuported operators (and number of queries used)
+        $facet                2
+        $bucket               1
+        $bucketAuto           1
+Log lines of unsupported operators logged here: /tmp/compat.out
+```
