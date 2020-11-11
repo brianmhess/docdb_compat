@@ -26,6 +26,19 @@ are evaluating compatibility.
 * The `<output file>` is where all log lines that contain operators
 which are not supported by Amazon DocumentDB will saved
 
+The tool will also output a version of the queries that were not supported 
+in a file whose filename is `<output file>.query`. These queries will
+have queries in JavaScript format (so, compatible with the mongo shell), 
+and be formatted as follows:
+```
+<db_name>.<collection_name>.<operation>(<arguments>) // [<list of unsupported operators>]
+```
+
+For example:
+```
+mydb.mycoll.aggregate([{'$project': {'country': 1.0, 'city': 1.0}}, {'$sortByCount': '$city'}])  // ['$sortByCount']
+```
+
 ### Examples
 ```
 python3 docdb_compat/compat.py 3.6 test/testlog.txt /tmp/test.output
