@@ -39,6 +39,14 @@ For example:
 mydb.mycoll.aggregate([{'$project': {'country': 1.0, 'city': 1.0}}, {'$sortByCount': '$city'}])  // ['$sortByCount']
 ```
 
+### Enabling query logging
+To enable logging of queries to the MongoDB logs you enable the query profiler
+and set the `slowms` to `-1`, which will cause all queries to be logged.
+To do so, run the following query from the `mongo` shell.
+```
+db.setProfilingLevel(0, -1)
+```
+
 ### Examples
 ```
 python3 docdb_compat/compat.py 3.6 test/testlog.txt /tmp/test.output
