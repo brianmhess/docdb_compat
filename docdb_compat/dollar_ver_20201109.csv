@@ -118,7 +118,7 @@ $lt,Yes,Yes
 $lte,Yes,Yes
 $ne,Yes,Yes
 $cond,Yes,Yes
-$ifNull,No,Yes
+$ifNull,Yes,Yes
 $switch,No,No
 $type,No,No
 $dayOfYear,Yes,Yes
@@ -141,11 +141,11 @@ $isoWeekYear,Yes,Yes
 $literal,No,No
 $mergeObjects,No,No
 $natural,No,No
-$setEquals,No,Yes
-$setIntersection,No,Yes
-$setUnion,No,Yes
+$setEquals,Yes,Yes
+$setIntersection,Yes,Yes
+$setUnion,Yes,Yes
 $setDifference,No,No
-$setIsSubset,No,Yes
+$setIsSubset,Yes,Yes
 $anyElementTrue,No,No
 $allElementsTrue,No,No
 $collStats,No,No
@@ -167,7 +167,7 @@ $bucket,No,No
 $bucketAuto,No,No
 $sortByCount,No,No
 $addFields,Yes,No
-$replaceRoot,No,Yes
+$replaceRoot,Yes,Yes
 $count,Yes,Yes
 $currentOp,Yes,Yes
 $listLocalSessions,No,No
