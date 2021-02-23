@@ -149,7 +149,7 @@ def process_log_file(ver, fname, unsupported_fname, unsupported_query_fname):
     print('Results:')
     if (unsupported_ct > 0):
         print(f'\t {unsupported_ct} out of {line_ct} queries unsupported')
-        print(f'Unsuported operators (and number of queries used)')
+        print(f'Unsupported operators (and number of queries used):')
         for k,v in sorted(usage_map.items(), key=lambda x: (-x[1],x[0])):
             print(f'\t{k:20}  {v}')
     else:
@@ -175,7 +175,7 @@ def main(args):
     infname = args[1]
     outfname = args[2]
     outqueryfname = f'{args[2]}.query'
-    load_keywords('./docdb_compat/dollar_ver_20201109.csv')
+    load_keywords('./docdb_compat/dollar.csv')
     process_log_file(ver, infname, outfname, outqueryfname)
     
 

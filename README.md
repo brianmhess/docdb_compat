@@ -47,6 +47,9 @@ To do so, run the following query from the `mongo` shell.
 db.setProfilingLevel(0, -1)
 ```
 
+It is recommended to use a dev/test MongoDB installation to capture the queries, as
+the logging of all queries can impact production workloads.
+
 ### Examples
 ```
 python3 docdb_compat/compat.py 3.6 test/testlog.txt /tmp/test.output
@@ -55,7 +58,7 @@ Expected output:
 ```
 Results:
          2 out of 7 queries unsupported
-Unsuported operators (and number of queries used)
+Unsupported operators (and number of queries used):
         $facet                2
         $bucket               1
         $bucketAuto           1
@@ -64,4 +67,5 @@ Query Types:
         find        3
         query       1
 Log lines of unsupported operators logged here: /tmp/compat.out
+Queries of unsupported operators logged here: /tmp/compat.out.query
 ```
